@@ -1,0 +1,9 @@
+Outline for algorithm: 
+
+1. Separate members from forbidden groupings into “partial groups”.
+2. Create partial groups for mandatory groupings.
+3. Create a score for every student by adding up GPA and skill ratings.
+4. Sort students by score.
+5. Divide the list into segments according to the size of the groups.
+6. Finish off partial groups.
+7. Take a student from each segment to make the rest of the balanced groups.
