@@ -29,5 +29,45 @@ Number of groups = CEILING (CLASS SIZE divided GROUP SIZE)
 
 Need to keep track of whether or not a group is full (Boolean?). Need to keep track of how many students are left in class list (int). Need to balance partial groups.
 
+Assume each student contains a list (Hashmap?) of other students.
+The other students are the keys. The values are a code (0,1) that indicates whether they must or must not work together.
+
+For each GROUP, maintain a list of students that must NOT be added (it is the union of each member's list). 
+
+1. For each mandatory student combination:
+1. Put those students in a group together.
+2. Add all students that the members are not allowed to work with to the Group's DO_NOT_ADD list.
+3. Remove these students from class list.
+
+2. For each forbidden student combination:
+1. For each student:
+1. For each group already made:
+1. If (GROUP NOT FULL) && (THIS STUDENT NOT IN THIS GROUP'S DO_NOT_ADD LIST):
+1. Add this student to this group+
+2. Else try next group 
+3. If can't add anywhere (this student on every DO_NOT_ADD list or groups are full so far), make new group for this student.
+***Note: what about adding Student preference feature in the future?? Could each group also have a list of PREFERRED_TO_ADD. 
+
+There should be add(Student, Group) method:
+- add Student to this Group
+- add Student's forbidden partners to this Group's DO_NOT_ADD list
+- remove Student from class list
+
+Next step: calculate score. 
+Have some class  ScoreCalculator that will take the classlist and assign each student a score. 
+ 
+1. Sort students by score.
+2. Make n (=group size) new lists. 
+3. Fill up these groups from low to high (so the lists are stored in an array and the index indicates how high the relative scores of the students are. 
+
+Finish any groups that are not full from forbidden/mandatory section by randomly selecting students. 
+
+Make the rest of the groups:
+1. Select one student from each of the n new lists. 
+
+Leftover students:
+1. Put in their own group.	
+
+
 
 
