@@ -1,0 +1,39 @@
+public class Skill
+{
+	private String name;
+	private int rate;
+	private int convert(final Rate rate)
+	{
+		switch(rate)
+		{
+		case VERYBAD:		return 0;
+		case BAD:				return 1;
+		case NORMAL:		return 2;
+		case GOOD:			return 3;
+		case VERYGOOD:	return 4;
+		default:				return -1;
+		}
+	}
+	public static enum Rate{VERYBAD,BAD,NORMAL,GOOD,VERYGOOD};
+	public Skill(String name,final Rate rate)
+	{
+		this.name=name;
+		this.rate=convert(rate);
+	}
+	public int getRate()
+	{
+		return rate;
+	}
+	public String getSkill()
+	{
+		return name;
+	}
+	public void setMark(final Rate rate)
+	{
+		this.rate=convert(rate);
+	}
+	public void setSkill(String name)
+	{
+		this.name=name;
+	}
+}
