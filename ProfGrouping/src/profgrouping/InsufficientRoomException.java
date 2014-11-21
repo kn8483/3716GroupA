@@ -1,0 +1,8 @@
+public class InsufficientRoomException extends RuntimeException {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+}
