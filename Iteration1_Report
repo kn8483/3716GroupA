@@ -1,9 +1,0 @@
-End of iteration 1. 
-
-We have an implementation of the most basic grouping algorithm, a running interface, and a code framework into which we can add the rest of our functionality.
-
-Revised goals for features to be added by end of project:
-- Professor can specify mandatory and forbidden partners
-- Groups can be be balanced by GPA/Score
-- Professor can choose some parameters for how to group students (whether or not to balance GPA, how to deal with indivisibility, etc.) 
-- Extra (time permitting) - manual editing of groups by swapping
